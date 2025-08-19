@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Äänestyssovellus – Prototyyppi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Äänestyssovellus</h1>
+    <nav>
+      <button class="tab-btn active" data-tab="list">Etusivu</button>
+      <button class="tab-btn" data-tab="admin">Hallinta</button>
+      <label class="admin-switch">
+        <input type="checkbox" id="isAdmin" />
+        <span>Ylläpitotila</span>
+      </label>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="list" class="tab active">
+      <div class="toolbar">
+        <input id="search" placeholder="Hae äänestyksiä..." />
+        <button id="resetData">Alusta demodata</button>
+      </div>
+      <div id="pollList" class="grid"></div>
+      <p id="emptyList" class="muted" style="display:none;">Ei vielä äänestyksiä.</p>
+    </section>
+
+    <section id="admin" class="tab">
+      <h2>Luo äänestys</h2>
+      <form id="createForm" class="card">
+        <label>Otsikko<input id="title" required maxlength="120" /></label>
+        <label>Kuvaus<textarea id="desc" rows="3" maxlength="500"></textarea></label>
+        <div id="optionsWrap">
+          <div class="opt-row"><input class="opt" placeholder="Vaihtoehto 1" required /></div>
+          <div class="opt-row"><input class="opt" placeholder="Vaihtoehto 2" required /></div>
+        </div>
+        <div class="row">
+          <button type="button" id="addOption">Lisää vaihtoehto</button>
+          <button type="submit">Tallenna äänestys</button>
+        </div>
+        <p class="hint muted">Vähintään 2 vaihtoehtoa vaaditaan.</p>
+      </form>
+
+      <h2 style="margin-top:2rem;">Poista äänestys</h2>
+      <div id="adminList" class="grid"></div>
+    </section>
+  </main>
+
+  <dialog id="pollDialog">
+    <form method="dialog" class="dialog-card">
+      <h3 id="dlgTitle"></h3>
+      <p id="dlgDesc" class="muted"></p>
+      <div id="dlgOptions" class="dlg-options"></div>
+      <menu>
+        <button value="close">Sulje</button>
+        <button id="voteBtn" value="default">Äänestä</button>
+        <button id="resultsBtn" type="button">Näytä tulokset</button>
+      </menu>
+      <div id="results" class="results"></div>
+    </form>
+  </dialog>
+
+  <template id="pollCardTmpl">
+    <article class="card">
+      <h3 class="title"></h3>
+      <p class="desc"></p>
+      <div class="row">
+        <button class="open">Avaa</button>
+        <button class="showResults">Tulokset</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

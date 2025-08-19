@@ -18,16 +18,13 @@ Ylläpitäjän katsotaan perivän (generalization) Käyttäjän toiminnot.
 - `kayttotapauskaavio.puml` – PlantUML-lähdekoodi (voit generoida PNG/SVG:n itse PlantUML:lla).
 - `kayttotapauskaavio.mmd` – Mermaid-versio kaaviosta (esimerkiksi GitHubin, Obsidianin tai mkdocs-mermaidin kanssa).
 
-## Kuinka julkaiset GitHubiin
-1. Luo uusi tyhjä repo GitHubiin (esim. nimellä `aanestyssovellus-kayttotapauskaavio`).
-2. Kloonaa repo ja kopioi tämän kansion tiedostot sinne **tai** pura alla oleva zip suoraan repon juureen.
-3. Aja:
-   ```bash
-   git add .
-   git commit -m "Lisää UML-käyttötapauskaavio äänestyssovellukselle"
-   git push origin main
-   ```
 
-## Huomioita
-- Kaavio noudattaa UML-notaatiota: actorit, käyttötapaukset (ellipsit), järjestelmärajaus (rectangle), assosiaatiot (viivat) ja aktorien generalisaatio (ontto kolmio).
-- Jos haluat pieniä muutoksia (esim. että Ylläpitäjä **ei** peri Käyttäjää, tai lisätoimintoja kuten sisäänkirjautuminen), muokkaa PlantUML- tai Mermaid-tiedostoa ja renderöi uudelleen.
+
+
+
+# Äänestyssovellus – Kaaviot ja prototyyppi
+
+Katso `kayttotapauskaavio.png` ja `USE-CASES.md`. Avaa `index.html` selaimessa prototyyppiä varten.
+
+
+Lisätty: käyttötapauskuvaukset (`USE-CASES.md`) ja selainprototyyppi (`index.html`, `style.css`, `script.js`).
