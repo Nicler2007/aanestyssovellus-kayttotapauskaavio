@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+skinparam actorStyle stickman
+
+actor "Käyttäjä" as User
+actor "Ylläpitäjä" as Admin
+Admin --|> User
+
+rectangle "Äänestyssovellus" {
+  usecase "Selaa äänestyksiä" as UC1
+  usecase "Katso äänestystilanne" as UC2
+  usecase "Äänestä" as UC3
+  usecase "Luo äänestys" as UC4
+  usecase "Poista äänestys" as UC5
+}
+
+User -- UC1
+User -- UC2
+User -- UC3
+Admin -- UC4
+Admin -- UC5
+
+@enduml

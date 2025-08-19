@@ -1,0 +1,15 @@
+```mermaid
+%% Äänestyssovellus – käyttötapauskaavio
+usecaseDiagram
+actor Käyttäjä as User
+actor Ylläpitäjä as Admin
+Admin --|> User
+
+rectangle Äänestyssovellus {
+  User -- (Selaa äänestyksiä)
+  User -- (Katso äänestystilanne)
+  User -- (Äänestä)
+  Admin -- (Luo äänestys)
+  Admin -- (Poista äänestys)
+}
+```
